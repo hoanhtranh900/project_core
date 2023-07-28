@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>munti-module</artifactId>
+        <groupId>com.osp</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>app-core</artifactId>
+    <groupId>com.osp.core</groupId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+    <name>app-core</name>
+
+    <properties>
+        <typescript-generator.version>2.36.1070</typescript-generator.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.osp.notification</groupId>
+            <artifactId>app-notification</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cz.habarta.typescript-generator</groupId>
+            <artifactId>typescript-generator-spring</artifactId>
+            <version>${typescript-generator.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>cz.habarta.typescript-generator</groupId>
+                <artifactId>typescript-generator-maven-plugin</artifactId>
+                <version>${typescript-generator.version}</version>
+                <configuration>
+                    <generateSpringApplicationClient>true</generateSpringApplicationClient>
+                    <jsonLibrary>jackson2</jsonLibrary>
+                    <outputFileType>implementationFile</outputFileType>
+                    <classPatterns>
+                        <pattern>com.osp.core.entity.*</pattern>
+                        <pattern>com.osp.core.entity.view.*</pattern>
+                        <pattern>com.osp.core.dto.request.*</pattern>
+                        <pattern>com.osp.core.dto.response.*</pattern>
+                        <pattern>com.osp.core.dto.wso2is.*</pattern>
+                    </classPatterns>
+                    <scanSpringApplication>true</scanSpringApplication>
+                    <generateSpringApplicationClient>true</generateSpringApplicationClient>
+                    <extensions>
+                        <extension>cz.habarta.typescript.generator.ext.AxiosClientExtension</extension>
+                    </extensions>
+                    <excludeClasses>
+                        <class>java.io.Serializable</class>
+                    </excludeClasses>
+                    <outputFile>target/rest.ts</outputFile>
+                    <!--<outputKind>global</outputKind>-->
+                    <outputKind>module</outputKind>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>cz.habarta.typescript-generator</groupId>
+                        <artifactId>typescript-generator-spring</artifactId>
+                        <version>${typescript-generator.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,63 @@
+*/target/
+/target/
+/munti-module/app-base/target/
+/munti-module/app-core/target/
+/munti-module/app-service/target/
+/out/
+/logs/
+
+### STS ###
+/.apt_generated
+/.classpath
+/.factorypath
+/.project
+/.settings
+/.springBeans
+/.sts4-cache
+
+### IntelliJ IDEA ###
+/.idea/
+/munti-module/.idea/
+*/.idea/
+*.mvn*
+/*.iws
+*.iml
+/*.ipr
+/*.class
+/*.projects
+/*.prefs
+/*.project
+*.war
+*.ear
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+/nbactions.xml
+/nb-configuration.xml
+
+### VS Code ###
+/.vscode/

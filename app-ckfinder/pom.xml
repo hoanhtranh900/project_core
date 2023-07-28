@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>munti-module</artifactId>
+        <groupId>com.osp</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>app-ckfinder</artifactId>
+    <groupId>com.osp.ckfinder</groupId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+    <name>app-ckfinder</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.osp.core</groupId>
+            <artifactId>app-core</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <!--ckfinder-->
+        <dependency>
+            <groupId>com.ckfinder</groupId>
+            <artifactId>CKFinderPlugin-FileEditor</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/CKFinderPlugin-FileEditor-2.6.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ckfinder</groupId>
+            <artifactId>CKFinderPlugin-Watermark</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/CKFinderPlugin-Watermark-2.6.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.ckfinder</groupId>
+            <artifactId>CKFinderPlugin-ImageResize</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/CKFinderPlugin-ImageResize-2.6.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss</groupId>
+            <artifactId>jboss-vfs</artifactId>
+            <version>3.2.15.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.8</version>
+        </dependency>
+        <!--/ckfinder-->
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

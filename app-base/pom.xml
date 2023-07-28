@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>munti-module</artifactId>
+        <groupId>com.osp</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>app-base</artifactId>
+    <groupId>com.osp.api</groupId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+    <name>app-base</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.osp.core</groupId>
+            <artifactId>app-core</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.osp.service</groupId>
+            <artifactId>app-service</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.osp.quartz</groupId>
+            <artifactId>app-quartz</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.osp.ckfinder</groupId>
+            <artifactId>app-ckfinder</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.osp.AppbaseApplication</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!--dev-->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+        </profile>
+
+        <!--thử nghiệm dev-->
+        <profile>
+            <id>sit</id>
+            <properties>
+                <spring.profiles.active>sit</spring.profiles.active>
+            </properties>
+        </profile>
+
+        <!--prod-->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+
+        <!--thử nghiệm prod-->
+        <profile>
+            <id>uat</id>
+            <properties>
+                <spring.profiles.active>uat</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
+</project>

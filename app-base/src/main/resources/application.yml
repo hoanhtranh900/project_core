@@ -1,0 +1,9 @@
+
+spring:
+  application:
+    name: categories.app
+
+server:
+  port: ${sv.port}
+  servlet:
+    context-path: ${sv.context-path}
